@@ -29,6 +29,9 @@ Node * createNode(const void * data) {
 }
 
 List * createList() {
+    List *lista = malloc(sizeof(List));
+    lista->tail = 0;
+    
      return NULL;
 }
 

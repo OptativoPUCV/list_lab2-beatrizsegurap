@@ -1,0 +1,17 @@
+Mon Mar 22 18:05:59 UTC 2021: 
+ list.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:5:0:
+list.c: In function ‘createList’:
+list.c:32:33: error: ‘list’ undeclared (first use in this function); did you mean ‘lista’?
+     List *lista = malloc(sizeof(list));
+                                 ^~~~
+                                 lista
+list.c:32:33: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+Mon Mar 22 18:06:28 UTC 2021: 
+ list.c | 3 +++
+ 1 file changed, 3 insertions(+)
+ tests:  0|6
+total_score: 0/70
+0f06b5b
