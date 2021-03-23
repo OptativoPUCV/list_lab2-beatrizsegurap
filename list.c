@@ -43,8 +43,10 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-    //list->current
-    return NULL;
+    Node* next = malloc(sizeof(Node));
+    next = list->current->next;
+    list->current=list->current->next;
+    return (int*)next->data;
 }
 
 void * lastList(List * list) {
