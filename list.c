@@ -39,10 +39,11 @@ void * firstList(List * list) {
     //Node* n=malloc(sizeof(Node));
     //n=list->head;
     list->current=list->head;
-    return &(list->head->data);
+    return (list->head);
 }
 
 void * nextList(List * list) {
+  
     return NULL;
 }
 
