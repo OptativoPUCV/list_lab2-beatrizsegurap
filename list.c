@@ -53,10 +53,8 @@ void * nextList(List * list) {
 }
 
 void * lastList(List * list) {
-    while(list->current->next){
-      list->current=list->current->next;
-    }
-    return (void*)list->current->data;
+    list->current=list->tail;
+    return (void*)list->tail->data;
 }
 
 void * prevList(List * list) {
