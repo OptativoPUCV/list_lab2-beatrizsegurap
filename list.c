@@ -58,9 +58,9 @@ void * lastList(List * list) {
     return (void*)list->tail->data;
 }
 
-void * prevList(List * list) {
-    if(!list->current->prev)return NULL;
+void * prevList(List * list){
     list->current=list->current->prev;
+    if(!list->current)return NULL;
     return (void*)list->current->data;
 }
 
