@@ -44,10 +44,9 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
+    if(!list->current)return NULL;
+    if(!list->current->next)return NULL;
     Node* next = malloc(sizeof(Node));
-    if(list->current->next==NULL){
-      return NULL;
-    }
     next = list->current->next;
     list->current=list->current->next;
     return (void*)next->data;
