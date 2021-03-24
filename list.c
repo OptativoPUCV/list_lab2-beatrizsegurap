@@ -69,15 +69,12 @@ void pushFront(List * list, const void * data) {
   Node* n=createNode(data);
   if(!list->head){
     list->tail=n;
-    n->next=NULL;
   }
   else{
     list->head->prev=n;
     n->next=list->head;
   }
-  n->prev=NULL;
   list->head=n;
-
 }
 
 void pushBack(List * list, const void * data) {
