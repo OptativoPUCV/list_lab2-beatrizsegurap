@@ -39,13 +39,13 @@ List * createList() {
 
 void * firstList(List * list) {
     list->current=list->head;
-    return (int*)list->head->data;
+    return (void*)list->head->data;
 }
 
 void * nextList(List * list) {
     Node* next = malloc(sizeof(Node));
-    if(list->current==NULL){
-      //list->current=NULL;
+    if(list->current->next==NULL){
+      list->current=NULL;
       return NULL;
     }
     else{
