@@ -112,13 +112,14 @@ void * popCurrent(List * list) {
     list->current=list->current->next;
     return (void*)aux->data;
   }
+  //Si el nodo a eliminar se encuentra al final
   if(!list->current->next){
     list->tail=list->current->prev;
     list->current->prev->next=NULL;
     list->current=list->current->prev;
     return (void*)aux->data;
   }
-
+  //Si el nodo se encuentra en cualquier posicion
   list->current->prev->next=list->current->next;
   list->current->next->prev=list->current->prev;
   list->current=list->current->next;
