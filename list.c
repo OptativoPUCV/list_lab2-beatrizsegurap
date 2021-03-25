@@ -103,7 +103,26 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-    return NULL;
+  Node* aux = malloc(sizeof(Node));
+  aux = list->current;
+  //Si el nodo a eliminar se encuentra en la cabecera
+  if(!list->current->prev){
+    list->head=list->current->next;
+    list->current->next->prev=NULL;
+    list->current=list->current->next;
+    return (void*)aux->data;
+  }
+  if(!list->current->next){
+    list->tail=list->current->prev;
+    list->current->prev->next=NULL;
+    list->current=list->current->prev;
+    return (void*)aux->data;
+  }
+
+  list->current->prev->next=list->current->next;
+  list->current->next->prev=list->current->prev;
+  list->current=list->current->next;
+  return (void*)aux->data;
 }
 
 void cleanList(List * list) {
